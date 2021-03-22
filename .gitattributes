@@ -1,0 +1,4 @@
+**/generated/* linguist-generated
+**/*i18n.json linguist-generated
+**/*module.scss linguist-generated
+**/yarn.lock linguist-generated

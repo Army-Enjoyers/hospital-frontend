@@ -1,0 +1,32 @@
+.form {
+  max-width: 430px;
+  margin-left: 70px;
+  width: max-content;
+  min-height: 422px;
+  display: flex;
+  padding: 45px;
+  flex-direction: column;
+  justify-content: space-between;
+  .title {
+    font-size: 26px;
+    font-weight: 600;
+  }
+  .link {
+    color: #5b6ea3;
+  }
+  .subTitle {
+    font-size: 12px;
+    font-weight: 500;
+    margin-top: 12px;
+    color: rgba(69, 69, 69, 0.5);
+  }
+
+  .field {
+    width: 100%;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: flex-end;
+  }
+}

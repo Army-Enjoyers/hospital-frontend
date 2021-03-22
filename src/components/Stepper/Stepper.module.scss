@@ -1,0 +1,67 @@
+.stepper {
+  width: 225px;
+  position: relative;
+
+  margin: 0 auto 25px auto;
+  display: flex;
+  justify-content: space-between;
+
+  .activeIcon, .passedIcon {
+    opacity: 0;
+    position: absolute;
+    transition: opacity .7s;
+  }
+
+  .step {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .stepperIndex {
+      position: absolute;
+      z-index: 2;
+    }
+  }
+
+  .active {
+    .stepperIndex {
+      color: #fff;
+    }
+    .passedIcon {
+      opacity: 1;
+    }
+    .activeIcon {
+      z-index: 1;
+      opacity: 1;
+    }
+  }
+
+  .passed {
+    .passedIcon {
+      opacity: 1;
+    }
+    .stepperIndex {
+      color: #fff;
+    }
+  }
+
+  .line {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 90%;
+    height: 0;
+    border: 1px solid rgba(69, 69, 69, 0.3);
+  }
+}

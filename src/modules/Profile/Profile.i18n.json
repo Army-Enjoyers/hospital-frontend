@@ -1,0 +1,19 @@
+{
+  "personal": "Личная информация",
+  "organization": "Организация",
+  "requisites": "Реквизиты",
+  "settings": "Настройки",
+  "accountNumber": "Расчетный счёт",
+  "bankName": "Название банка",
+  "bankCode": "Код банка",
+  "bankAddress": "Адрес банка",
+  "bankIndex": "Индекс",
+  "organizationName": "Наименование организации",
+  "organizationType": "Правовая форма",
+  "organizationUNP": "УНП",
+  "organizationCity": "Населённый пункт",
+  "organizationAddress": "Адрес",
+  "organizationIndex": "Индекс",
+  "successSavingInformation": "Ваша информация была успешно сохранена",
+  "errorSavingInformation": "Что-то пошло не так:("
+}

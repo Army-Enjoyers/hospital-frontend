@@ -1,0 +1,56 @@
+.order {
+  background: #FFFFFF;
+  border-radius: 8px;
+  padding: 26px 40px;
+  display: flex;
+  cursor: pointer;
+  width: max-content;
+
+  .information {
+    min-width: 600px;
+    .address {
+      font-weight: 500;
+      font-size: 16px;
+      margin-bottom: 25px;
+    }
+    .extra {
+      display: flex;
+      justify-content: space-between;
+      .column {
+        font-weight: 500;
+        font-size: 14px;
+        .title {
+          color: rgba(69, 69, 69, 0.6);
+          margin-bottom: 8px;
+        }
+        .description {
+          color: rgba(69, 69, 69, 0.9);
+        }
+      }
+    }
+  }
+
+  .status {
+    font-weight: 600;
+    font-size: 16px;
+    text-align: center;
+    line-height: 20px;
+    width: 100%;
+    margin-left: 86px;
+    display: flex;
+    align-items: center;
+    max-width: 82px;
+    .statusArrived {
+      color: #2CA52A;
+      width: max-content;
+      height: max-content;
+    }
+
+    .statusInProgress {
+      color: #FFA800;
+      width: max-content;
+      height: max-content;
+    }
+  }
+
+}

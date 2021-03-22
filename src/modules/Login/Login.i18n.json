@@ -1,0 +1,10 @@
+{
+  "title": "Войдите в свой аккаунт",
+  "subTitle": "Вы еще не зарегистрировались? { register }",
+  "email": "Email",
+  "password": "Пароль",
+  "next": "Войти",
+  "authErrorTitle": "Ошибка",
+  "authErrorDescription": "Пользователя с такими данными не существует",
+  "authErrorSubmitButton": "Попробовать еще"
+}

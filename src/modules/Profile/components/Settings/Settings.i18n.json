@@ -1,0 +1,8 @@
+{
+  "settings": "Настройки",
+  "oldPassword": "Старый пароль",
+  "newPassword": "Новый пароль",
+  "confirmNewPassword": "Повторите новый пароль",
+  "submit": "Сохранить",
+  "cancel": "Отмена"
+}

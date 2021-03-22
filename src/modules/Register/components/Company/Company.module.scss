@@ -1,0 +1,19 @@
+.title {
+  display: block;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  margin-bottom: 40px;
+}
+
+.form {
+  display: flex;
+  justify-content: space-between;
+  height: 191px;
+  .formColumn {
+    .input {
+      margin-bottom: 30px;
+    }
+  }
+}
+
