@@ -58,7 +58,7 @@ module.exports = (env) => {
       plugins: [
         new HtmlWebpackPlugin({
           filename: 'index.html',
-          templateParameters: { projectName: 'Лавка Доставка' },
+          templateParameters: { projectName: 'Военный госпиталь' },
           template: cwd('./public/index.ejs'),
           favicon: cwd('./public/favicon.ico'),
         }),
