@@ -37,7 +37,6 @@ rules:
   react/prop-types: 'off'
   no-irregular-whitespace: 'error'
   no-useless-escape: 'error'
-  i18n/no-russian-character: 'error'
   no-magic-numbers: 'off'
   no-debugger: 'error'
 

@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { Input } from '~/components'
+
 export const Home = () => {
-  return <h1>Hello</h1>
+  return <Input width="100px" />
 }
