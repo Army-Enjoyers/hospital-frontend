@@ -14,8 +14,8 @@ const initialValues = {
 
 const getSchema = () =>
   object({
-    login: string().required(),
-    password: string().required(),
+    login: string().required('Это поле обязательно для заполнения'),
+    password: string().required('Это поле обязательно для заполнения'),
   }).required()
 
 export const Login = () => {
@@ -37,8 +37,8 @@ export const Login = () => {
             Добро пожаловать
           </Text>
           <Input mt="50px" placeholder="Логин" {...field('login')} />
-          <Input mt="20px" placeholder="Пароль" type="password" {...field('password')} />
-          <Button colorScheme="blue" mt="50px" padding={5} width="150px" {...submitProps}>
+          <Input mt="5px" placeholder="Пароль" type="password" {...field('password')} />
+          <Button colorScheme="blue" mt="20px" padding={5} width="150px" {...submitProps}>
             Войти
           </Button>
         </Box>

@@ -1,7 +1,6 @@
+import { Text } from '@chakra-ui/react'
 import React from 'react'
 
-import { Input } from '~/components'
-
 export const Home = () => {
-  return <Input width="100px" />
+  return <Text>darova</Text>
 }
