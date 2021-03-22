@@ -1,8 +1,0 @@
-{
-  "orderNumber": "Номер заказа",
-  "orderDate": "Дата доставки",
-  "orderTime": "Время доставки",
-  "orderPrice": "Сумма заказа",
-  "arrived": "Завершен",
-  "inProgress": "Ожидает отправки"
-}
