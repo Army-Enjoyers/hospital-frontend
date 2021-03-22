@@ -1,10 +1,34 @@
 import { Box, Flex, Text } from '@chakra-ui/react'
 import React from 'react'
+import { object, string } from 'yup'
 
 import { Button, Input } from '~/components'
+import { useForm } from '~/hooks'
 import { Container } from '~/layouts'
+import { LoginDTO } from '~/modules/Login/types'
+
+const initialValues = {
+  login: '',
+  password: '',
+}
+
+const getSchema = () =>
+  object({
+    login: string().required(),
+    password: string().required(),
+  }).required()
 
 export const Login = () => {
+  const onSubmit = async (values: LoginDTO) => {
+    console.log(values)
+  }
+
+  const { field, submitProps } = useForm({
+    validationSchema: getSchema(),
+    initialValues,
+    onSubmit,
+  })
+
   return (
     <Container>
       <Flex alignItems="center" height="100vh" justifyContent="center" width="100%">
@@ -12,9 +36,9 @@ export const Login = () => {
           <Text fontSize="3xl" fontWeight="600">
             Добро пожаловать
           </Text>
-          <Input mt="50px" placeholder="Логин" />
-          <Input mt="20px" placeholder="Пароль" />
-          <Button colorScheme="blue" mt="50px" padding={5} width="150px">
+          <Input mt="50px" placeholder="Логин" {...field('login')} />
+          <Input mt="20px" placeholder="Пароль" type="password" {...field('password')} />
+          <Button colorScheme="blue" mt="50px" padding={5} width="150px" {...submitProps}>
             Войти
           </Button>
         </Box>

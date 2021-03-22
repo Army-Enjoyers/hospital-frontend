@@ -20,7 +20,7 @@ export interface FieldProps<Value> {
 
 export interface SubmitProps {
   disabled: boolean
-  loading: boolean
+  isLoading: boolean
   onClick: () => void
   type?: 'submit'
 }
@@ -56,7 +56,7 @@ export const useForm = <Values extends object>({ ...props }: FormProps<Values>) 
 
   const submitProps: SubmitProps = {
     disabled: formik.isSubmitting,
-    loading: formik.isSubmitting,
+    isLoading: formik.isSubmitting,
     onClick: formik.handleSubmit,
     type: 'submit',
   }
