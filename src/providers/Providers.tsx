@@ -9,7 +9,8 @@ export const Providers: React.FC = ({ children }) => {
   return (
     <IntlProvider>
       <ChakraProvider theme={defaultTheme}>
-        <CSSReset />{children}</StatusModalProvider>
+        <CSSReset />
+        {children}
       </ChakraProvider>
     </IntlProvider>
   )
