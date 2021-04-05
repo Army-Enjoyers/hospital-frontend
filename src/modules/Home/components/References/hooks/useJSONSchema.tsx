@@ -21,13 +21,13 @@ export const useJSONSchema = (schema: JSONSchemaFormField[] | null, field: IFiel
             case 'input':
               return <Input {...inputProps} {...field(name)} key={name} />
             case 'radio':
+              const fieldOptions = field(name)
               return (
                 <RadioGroup
                   key={name}
-                  value={field(name).value}
+                  value={fieldOptions.value}
                   onChange={(value) => {
-                    console.log(value)
-                    field(name).onChange(value)
+                    fieldOptions.onChange(value)
                   }}
                 >
                   {variants?.map((variant) => (
