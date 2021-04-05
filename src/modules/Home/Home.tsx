@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 
 import { Container } from '~/layouts'
 
-import { Greetings, Menu } from './components'
+import { Calculator, DoctorDiary, Greetings, History, Menu, References } from './components'
 import { NAVIGATION } from './types'
 
 export const Home = () => {
@@ -11,7 +11,7 @@ export const Home = () => {
 
   return (
     <Container>
-      <Flex paddingTop="150px" width="100%">
+      <Flex alignItems="center" paddingTop="150px" width="100%">
         <Menu
           active={route}
           items={[
@@ -23,6 +23,10 @@ export const Home = () => {
           onChange={setRoute}
         />
         {route === undefined && <Greetings />}
+        {route === NAVIGATION.HISTORY && <History />}
+        {route === NAVIGATION.MEDICAL_RECORDS && <DoctorDiary />}
+        {route === NAVIGATION.CALCULATOR && <Calculator />}
+        {route === NAVIGATION.CREATE_REFERENCE && <References />}
       </Flex>
     </Container>
   )

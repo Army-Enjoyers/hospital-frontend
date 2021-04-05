@@ -25,7 +25,9 @@ export const Menu: React.FC<Props> = ({ items, onChange, active, ...props }) => 
           key={key}
           paddingX="60px"
           paddingY="30px"
-          style={{ transform: active === value ? 'translateX(30%)' : 'none' }}
+          style={{
+            transform: active === value ? 'translateX(10%)' : 'none',
+          }}
           tranform={active === value ? 'translateX(10px)' : 'none'}
           transition=".5s"
           userSelect="none"

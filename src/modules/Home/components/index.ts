@@ -1,2 +1,6 @@
 export * from './Menu'
 export * from './Greetings'
+export * from './History'
+export * from './DoctorDiary'
+export * from './References'
+export * from './Calculator'
