@@ -19,9 +19,15 @@ export const useJSONSchema = (schema: JSONSchemaFormField[] | null, field: IFiel
         {schema.map(({ type, name, inputProps, variants }) => {
           switch (type) {
             case 'input':
-              return <Input {...inputProps} {...field(name)} />
+              return <Input {...inputProps} {...field(name)} key={name} />
               return (
-                <RadioGroup onChange={(value) => field(name).onChange(value)}>
+                <RadioGroup
+                  key={name}
+                  onChange={(value) => {
+                    console.log(value)
+                    field(name).onChange(value)
+                  }}
+                >
                   {variants?.map((variant) => (
                     <Radio key={variant} value={variant}>
                       {variant}
@@ -30,7 +36,7 @@ export const useJSONSchema = (schema: JSONSchemaFormField[] | null, field: IFiel
                 </RadioGroup>
               )
             default:
-              return <Input type="textarea" {...inputProps} {...field(name)} />
+              return <Input key={name} type="textarea" {...inputProps} {...field(name)} />
           }
         })}
       </Box>
