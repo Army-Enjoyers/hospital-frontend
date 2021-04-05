@@ -11,7 +11,7 @@ export const Menu: React.FC<Props> = ({ items, onChange, active, ...props }) => 
     <Box
       boxShadow="0 5px 10px 0 rgb(0 0 0 / 10%)"
       mr="100px"
-      paddingY="25px"
+      paddingY="23px"
       width="calc(40% - 100px)"
       {...props}
     >

@@ -11,7 +11,7 @@ export const Home = () => {
 
   return (
     <Container>
-      <Flex alignItems="center" paddingTop="150px" width="100%">
+      <Flex paddingTop="150px" width="100%">
         <Menu
           active={route}
           items={[

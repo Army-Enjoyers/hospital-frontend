@@ -5,13 +5,14 @@ import { Input } from '~/components'
 import { FieldProps } from '~/hooks'
 import { JSONSchemaFormField } from '~/types'
 
-type IField = (field: string) => FieldProps<string>
+type IField = (name: string) => FieldProps<never>
 
 interface JSONSchema {
-  JSONForm: React.FC
+  JSONForm: React.FC | null
 }
 
-export const useJSONSchema = (schema: JSONSchemaFormField[], field: IField): JSONSchema => {
+export const useJSONSchema = (schema: JSONSchemaFormField[] | null, field: IField): JSONSchema => {
+  if (!schema) return { JSONForm: null }
   const JSONForm: React.FC = () => {
     return (
       <Box>
@@ -19,9 +20,8 @@ export const useJSONSchema = (schema: JSONSchemaFormField[], field: IField): JSO
           switch (type) {
             case 'input':
               return <Input {...inputProps} {...field(name)} />
-            case 'radio':
               return (
-                <RadioGroup onChange={(value) => field(name).onChange(value.toString())}>
+                <RadioGroup onChange={(value) => field(name).onChange(value)}>
                   {variants?.map((variant) => (
                     <Radio key={variant} value={variant}>
                       {variant}
