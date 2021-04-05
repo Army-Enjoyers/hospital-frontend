@@ -20,9 +20,11 @@ export const useJSONSchema = (schema: JSONSchemaFormField[] | null, field: IFiel
           switch (type) {
             case 'input':
               return <Input {...inputProps} {...field(name)} key={name} />
+            case 'radio':
               return (
                 <RadioGroup
                   key={name}
+                  value={field(name).value}
                   onChange={(value) => {
                     console.log(value)
                     field(name).onChange(value)
