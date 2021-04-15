@@ -16,7 +16,7 @@ module.exports = (env) => {
     {
       entry: cwd('./src/index.tsx'),
       output: {
-        path: cwd(`dist/lavka-dostavka`),
+        path: cwd(`dist/hospital-frontend`),
         publicPath: '/',
       },
 
