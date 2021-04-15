@@ -3,4 +3,5 @@ export enum NAVIGATION {
   HISTORY,
   CALCULATOR,
   MEDICAL_RECORDS,
+  EXIT,
 }

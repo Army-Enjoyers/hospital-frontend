@@ -36,7 +36,7 @@ export const References: React.FC = () => {
 
   return (
     <Box>
-      <JSONForm />
+      {JSONForm && <JSONForm />}
       <Button {...submitProps}>Получить справку</Button>
     </Box>
   )

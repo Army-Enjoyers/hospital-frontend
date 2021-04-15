@@ -1,9 +1,10 @@
 import { Box, Flex, Text } from '@chakra-ui/react'
 import React from 'react'
+import { Redirect } from 'react-router-dom'
 import { object, string } from 'yup'
 
 import { Button, Input } from '~/components'
-import { useForm } from '~/hooks'
+import { useAuth, useForm } from '~/hooks'
 import { Container } from '~/layouts'
 import { LoginDTO } from '~/modules/Login/types'
 
@@ -19,8 +20,11 @@ const getSchema = () =>
   }).required()
 
 export const Login = () => {
+  const { setAuth, isLogin } = useAuth()
+
   const onSubmit = async (values: LoginDTO) => {
     console.log(values)
+    setAuth(true)
   }
 
   const { field, submitProps } = useForm({
@@ -28,6 +32,8 @@ export const Login = () => {
     initialValues,
     onSubmit,
   })
+
+  if (isLogin) return <Redirect to="/" />
 
   return (
     <Container>
