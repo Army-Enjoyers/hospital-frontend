@@ -9,7 +9,7 @@ const createProdConfig = (env) => {
     mode: 'production',
 
     output: {
-      publicPath: "/hostpital-frontend/",
+      publicPath: "/hospital-frontend/",
       filename: '[name].[hash].js',
       chunkFilename: '[chunkhash].chunk.js',
     },
