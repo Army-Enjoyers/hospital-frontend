@@ -1,6 +1,7 @@
 {
   "private": true,
   "author": "Ihar Makeyenka",
+  "homepage": "https://army-enjoyers.github.io/hospital-frontend",
   "scripts": {
     "start": "webpack serve --config ./infrastructure/dev.js --host localhost --open --env NODE_ENV=development",
     "print:lang": "node ./infrastructure/tools/i18n/extractMessages.js",
