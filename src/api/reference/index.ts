@@ -1,12 +1,13 @@
 import { AxiosInstance } from 'axios'
 
-import { JSONSchemaFormField } from '~/types'
+import { IJSONSchemaFormField, ISchemeMeta } from '~/types'
 
 export interface IReferenceAPI {
-  getFromJSONSchema: () => Promise<JSONSchemaFormField[]>
+  getFromJSONSchema: (schemeName: string) => Promise<IJSONSchemaFormField[]>
+  getAvailableSchemes: () => Promise<ISchemeMeta[]>
 }
 
-const mockJSONSchema: JSONSchemaFormField[] = [
+const mockJSONSchema: IJSONSchemaFormField[] = [
   { type: 'input', id: 'firstName', name: 'Имя пациента' },
   {
     type: 'input',
@@ -16,12 +17,23 @@ const mockJSONSchema: JSONSchemaFormField[] = [
   { type: 'radio', id: 'sex', name: 'Пол пациента', variants: ['Муж', 'Жен'] },
 ]
 
+const mockSchemeMeta: ISchemeMeta[] = [
+  { id: '0', name: 'Форма против ковида' },
+  { id: '0', name: 'Форма за ковид' },
+]
+
 export const ReferenceAPI = (client: AxiosInstance): IReferenceAPI => {
   console.log(client)
   return {
-    async getFromJSONSchema() {
-      return new Promise<JSONSchemaFormField[]>((resolve) =>
+    async getFromJSONSchema(schemeId: string) {
+      console.log(schemeId)
+      return new Promise<IJSONSchemaFormField[]>((resolve) =>
         setTimeout(() => resolve(mockJSONSchema), 1000),
+      )
+    },
+    async getAvailableSchemes() {
+      return new Promise<ISchemeMeta[]>((resolve) =>
+        setTimeout(() => resolve(mockSchemeMeta), 1000),
       )
     },
   }

@@ -3,16 +3,21 @@ import React, { useCallback, useEffect, useState } from 'react'
 
 import { createClient } from '~/api'
 import { Input } from '~/components'
-import { RadioGenerated } from '~/modules/Home/components/References/components'
-import { JSONSchemaFormField } from '~/types'
+import { IJSONSchemaFormField, ISchemeMeta } from '~/types'
 
-export const References: React.FC = () => {
-  const [schema, setSchema] = useState<JSONSchemaFormField[] | null>(null)
+import { RadioGenerated } from './components'
+
+interface Props {
+  available: ISchemeMeta[]
+}
+
+export const References: React.FC<Props> = ({ available }) => {
+  const [schema, setSchema] = useState<IJSONSchemaFormField[] | null>(null)
   const [values, setValues] = useState<Record<string, string>>()
 
   useEffect(() => {
     const client = createClient()
-    void client.getFromJSONSchema().then((data) => {
+    void client.getFromJSONSchema(available[0].id).then((data) => {
       setSchema(data)
     })
   }, [setSchema])
@@ -50,6 +55,7 @@ export const References: React.FC = () => {
               return (
                 <Input
                   key={name}
+                  mt={5}
                   placeholder={name}
                   value={values[id]}
                   onChange={(event) => onChange(id, event ?? '')}
@@ -70,6 +76,7 @@ export const References: React.FC = () => {
               return (
                 <Input
                   key={name}
+                  mt={5}
                   placeholder={name}
                   type="textarea"
                   value={values[id]}
