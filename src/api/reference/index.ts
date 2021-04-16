@@ -19,7 +19,8 @@ const mockJSONSchema: IJSONSchemaFormField[] = [
 
 const mockSchemeMeta: ISchemeMeta[] = [
   { id: '0', name: 'Форма против ковида' },
-  { id: '0', name: 'Форма за ковид' },
+  { id: '1', name: 'Форма за ковид' },
+  { id: '2', name: 'Форма кибер ковид' },
 ]
 
 export const ReferenceAPI = (client: AxiosInstance): IReferenceAPI => {

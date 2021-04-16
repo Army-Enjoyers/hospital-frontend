@@ -65,7 +65,6 @@ rules:
   '@typescript-eslint/consistent-type-definitions': 'error'
   '@typescript-eslint/member-ordering': 'warn'
   '@typescript-eslint/no-empty-interface': 'off'
-  '@typescript-eslint/no-explicit-any': 'error'
   '@typescript-eslint/no-extra-non-null-assertion': 'error'
   '@typescript-eslint/no-floating-promises': ['error', { ignoreVoid: true }]
   '@typescript-eslint/no-for-in-array': 'error'

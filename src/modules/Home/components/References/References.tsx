@@ -1,10 +1,12 @@
 import { Flex, Spinner, Box, Button } from '@chakra-ui/react'
 import React, { useCallback, useEffect, useState } from 'react'
+import Select from 'react-select'
 
 import { createClient } from '~/api'
 import { Input } from '~/components'
 import { IJSONSchemaFormField, ISchemeMeta } from '~/types'
 
+import styles from './References.module.scss'
 import { RadioGenerated } from './components'
 
 interface Props {
@@ -13,14 +15,16 @@ interface Props {
 
 export const References: React.FC<Props> = ({ available }) => {
   const [schema, setSchema] = useState<IJSONSchemaFormField[] | null>(null)
+  const [active, setActive] = useState(available[0].id)
   const [values, setValues] = useState<Record<string, string>>()
 
   useEffect(() => {
     const client = createClient()
-    void client.getFromJSONSchema(available[0].id).then((data) => {
+    setSchema(null)
+    void client.getFromJSONSchema(active).then((data) => {
       setSchema(data)
     })
-  }, [setSchema])
+  }, [setSchema, active, available])
 
   useEffect(() => {
     if (schema)
@@ -47,7 +51,18 @@ export const References: React.FC<Props> = ({ available }) => {
   }
 
   return (
-    <Box>
+    <Box width="60%">
+      <Box mb="25px" width="100%">
+        <Select
+          className={styles.select}
+          options={available.map((elem) => ({ value: elem.id, label: elem.name }))}
+          placeholder="Выберите форму для создания справки"
+          onChange={(event) => {
+            if (!event) return
+            setActive(event.value)
+          }}
+        />
+      </Box>
       <Box>
         {schema.map(({ type, name, id, variants }) => {
           switch (type) {
