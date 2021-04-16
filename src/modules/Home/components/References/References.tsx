@@ -6,7 +6,6 @@ import { createClient } from '~/api'
 import { Input } from '~/components'
 import { IJSONSchemaFormField, ISchemeMeta } from '~/types'
 
-import styles from './References.module.scss'
 import { RadioGenerated } from './components'
 
 interface Props {
@@ -54,9 +53,9 @@ export const References: React.FC<Props> = ({ available }) => {
     <Box width="60%">
       <Box mb="25px" width="100%">
         <Select
-          className={styles.select}
           options={available.map((elem) => ({ value: elem.id, label: elem.name }))}
           placeholder="Выберите форму для создания справки"
+          value={{ value: active, label: available.find((elem) => elem.id === active)?.name ?? '' }}
           onChange={(event) => {
             if (!event) return
             setActive(event.value)
