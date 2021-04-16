@@ -1,8 +1,9 @@
-import { Flex, Spinner, Box, Button, RadioGroup, Radio } from '@chakra-ui/react'
+import { Flex, Spinner, Box, Button } from '@chakra-ui/react'
 import React, { useCallback, useEffect, useState } from 'react'
 
 import { createClient } from '~/api'
 import { Input } from '~/components'
+import { RadioGenerated } from '~/modules/Home/components/References/components'
 import { JSONSchemaFormField } from '~/types'
 
 export const References: React.FC = () => {
@@ -43,39 +44,34 @@ export const References: React.FC = () => {
   return (
     <Box>
       <Box>
-        {schema.map(({ type, name, inputProps, id, variants }) => {
+        {schema.map(({ type, name, id, variants }) => {
           switch (type) {
             case 'input':
               return (
                 <Input
-                  {...inputProps}
                   key={name}
+                  placeholder={name}
                   value={values[id]}
                   onChange={(event) => onChange(id, event ?? '')}
                 />
               )
             case 'radio':
               return (
-                <RadioGroup
+                <RadioGenerated
+                  id={id}
                   key={name}
-                  value={values[id]}
-                  onChange={(value) => {
-                    onChange(id, String(value))
-                  }}
-                >
-                  {variants?.map((variant) => (
-                    <Radio key={variant} value={variant}>
-                      {variant}
-                    </Radio>
-                  ))}
-                </RadioGroup>
+                  name={name}
+                  values={values}
+                  variants={variants}
+                  onChange={onChange}
+                />
               )
             default:
               return (
                 <Input
                   key={name}
+                  placeholder={name}
                   type="textarea"
-                  {...inputProps}
                   value={values[id]}
                   onChange={(event) => onChange(id, event ?? '')}
                 />
@@ -83,7 +79,9 @@ export const References: React.FC = () => {
           }
         })}
       </Box>
-      <Button onClick={onSubmit}>Получить справку</Button>
+      <Button mt={25} onClick={onSubmit}>
+        Получить справку
+      </Button>
     </Box>
   )
 }
