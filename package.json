@@ -5,6 +5,7 @@
   "scripts": {
     "start": "webpack serve --config ./infrastructure/dev.js --host localhost --open --env NODE_ENV=development",
     "print:lang": "node ./infrastructure/tools/i18n/extractMessages.js",
+    "build:pages": "webpack --config ./infrastructure/ghpages.js --env NODE_ENV=production",
     "build": "webpack --config ./infrastructure/build.js --env NODE_ENV=production"
   },
   "devDependencies": {
