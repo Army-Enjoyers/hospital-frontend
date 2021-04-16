@@ -7,9 +7,14 @@ export interface IReferenceAPI {
 }
 
 const mockJSONSchema: JSONSchemaFormField[] = [
-  { type: 'input', name: 'firstName', inputProps: { placeholder: 'Имя' } },
-  { type: 'input', name: 'lastName', inputProps: { placeholder: 'Фамилия' } },
-  { type: 'radio', name: 'sex', variants: ['Муж', 'Жен'], inputProps: {} },
+  { type: 'input', id: 'firstName', name: 'Имя пациента', inputProps: { placeholder: 'Имя' } },
+  {
+    type: 'input',
+    id: 'lastName',
+    name: 'Фамилия пациента',
+    inputProps: { placeholder: 'Фамилия' },
+  },
+  { type: 'radio', id: 'sex', name: 'Пол пациента', variants: ['Муж', 'Жен'], inputProps: {} },
 ]
 
 export const ReferenceAPI = (client: AxiosInstance): IReferenceAPI => {

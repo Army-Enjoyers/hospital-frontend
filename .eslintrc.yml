@@ -90,6 +90,7 @@ rules:
   '@typescript-eslint/restrict-plus-operands': 'warn'
   '@typescript-eslint/explicit-function-return-type': 'off'
   '@typescript-eslint/no-use-before-define': 'off'
+  "react-hooks/rules-of-hooks": "off"
 
   import/no-cycle: 'error'
   import/no-useless-path-segments: 'error'
